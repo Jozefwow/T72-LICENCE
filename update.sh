@@ -20,11 +20,13 @@ cd ..
 echo ====mkdir makes a new directory under the root directory.
 echo ====we hide the error message if directory .deprecated already exists.
 mkdir .deprecated 2> /dev/null
+echo ====chmod will fail if the user does not own the ../.deprecated directory.
+chmod =rwx .deprecated
 echo ====the following line should not error,
 echo ====if you have a whereis for whereis, mv, dd, and base64.
 echo ====  to not be inconvenienced to reinstall system,
 echo ====  be safe if running dd.
-mv T72-LICENCE T72-LICENCE.deprecated.'$(date)'.$(dd if=/dev/urandom bs=16 count=1 2>/dev/null | base64)
+mv T72-LICENCE .deprecated/T72-LICENCE.$(date|tr ' ' '_').$(dd if=/dev/urandom bs=16 count=1 2>/dev/null | base64)
 echo ====the following line should succeed                       .
 echo ====if you have git installed. you can test with whereis git.
 echo ====_rivka says, you should not have internet except for kiruv.
