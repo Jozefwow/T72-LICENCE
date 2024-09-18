@@ -28,7 +28,7 @@ echo ====  to not be inconvenienced to reinstall system,
 echo ====  be safe if running dd.
 echo ====  rm can also delete all of the files if used properly. be safe.
 rm T72-LICENCE/mbt.russia.t72.users-manual.gnocci.pdf
-mv T72-LICENCE ./.deprecated/T72-LICENCE.$(date|tr ' ' '_').$(dd if=/dev/urandom bs=16 count=1 2>/dev/null | base64)
+mv T72-LICENCE .deprecated.T72-LICENCE.$(date|tr ' ' '_').$(dd if=/dev/urandom bs=16 count=1 2>/dev/null | base64)
 echo ====the following line should succeed                       .
 echo ====if you have git installed. you can test with whereis git.
 echo ====_rivka says, you should not have internet except for kiruv.
